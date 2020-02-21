@@ -19,10 +19,13 @@ public interface Api {
     Call<Balance> checkBalance(@Path("id") String id);
 
     @GET("/api/customer/getDetails/{id}")
-    Call<Wallet> checkWallet(@Path("id") int id);
+    Call<Wallet> checkWallet(@Path("id") String id);
 
     @POST("/api/transaction/create")
-    Call<TransactionResponse>  createTransaction(@Body CreateTransaction createTransaction);
+    Call<TransactionResponse> createTransaction(@Body CreateTransaction createTransaction);
+
+    @GET("/api/transaction/{id}")
+    Call<CheckTransaction> checkTransaction(@Path("id") String id);
 
 
 

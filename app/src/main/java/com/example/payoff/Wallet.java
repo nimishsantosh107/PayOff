@@ -48,4 +48,24 @@ public class Wallet {
     public List<String> getTransactions() {
         return transactions;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAmount(List<String> amount) {
+        this.amount = amount;
+    }
+
+    public void setEthers(int ethers) {
+        this.ethers = ethers;
+    }
+
+    public void setTransactionCount(int transactionCount) {
+        this.transactionCount = transactionCount;
+    }
+
+    public void setTransactions(List<String> transactions) {
+        this.transactions = transactions;
+    }
 }

@@ -10,23 +10,30 @@
         android:id="@+id/b1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="CLICK"/>
+        android:text="POST /api"/>
     <Button
         android:id="@+id/b2"
         android:layout_below="@+id/b1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="/api/customer/balance/123"/>
+        android:text="GET /api/customer/balance/123"/>
     <Button
         android:id="@+id/b3"
         android:layout_below="@+id/b2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="/api/customer/getDetails/2"/>
+        android:text="GET /api/customer/getDetails/2"/>
     <Button
         android:id="@+id/b4"
         android:layout_below="@+id/b3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="/api/transactions/create"/>
+        android:text="POST /api/transactions/create"/>
+
+    <Button
+        android:id="@+id/b5"
+        android:layout_below="@+id/b4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="GET /api/transaction/1"/>
 </RelativeLayout>

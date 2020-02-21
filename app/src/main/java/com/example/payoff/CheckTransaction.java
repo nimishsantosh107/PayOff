@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class CreateTransaction {
+public class CheckTransaction {
 
     @SerializedName("amount")
     private List<Integer> amount;
@@ -18,54 +18,42 @@ public class CreateTransaction {
     @SerializedName("value")
     private int value;
 
-    @SerializedName("time")
-    private String time;
-
-    public CreateTransaction(List<Integer> amount,String from, String to,int value,String time){
+    public CheckTransaction(List<Integer> amount, String from, String to, int value) {
         this.amount = amount;
         this.from = from;
         this.to = to;
         this.value = value;
-        this.time = time;
     }
 
     public List<Integer> getAmount() {
         return amount;
     }
 
-    public String getFrom() {
-        return from;
-    }
-
-    public String getTo() {
-        return to;
-    }
-
-    public int getValue() {
-        return value;
-    }
-
-    public String getTime() {
-        return time;
-    }
-
     public void setAmount(List<Integer> amount) {
         this.amount = amount;
+    }
+
+    public String getFrom() {
+        return from;
     }
 
     public void setFrom(String from) {
         this.from = from;
     }
 
+    public String getTo() {
+        return to;
+    }
+
     public void setTo(String to) {
         this.to = to;
     }
 
-    public void setValue(int value) {
-        this.value = value;
+    public int getValue() {
+        return value;
     }
 
-    public void setTime(String time) {
-        this.time = time;
+    public void setValue(int value) {
+        this.value = value;
     }
 }
