@@ -36,4 +36,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="GET /api/transaction/1"/>
+
+    <Button
+        android:id="@+id/b6"
+        android:layout_below="@+id/b5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="GET /api/init/1"/>
+
 </RelativeLayout>

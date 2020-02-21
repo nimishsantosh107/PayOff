@@ -27,6 +27,9 @@ public interface Api {
     @GET("/api/transaction/{id}")
     Call<CheckTransaction> checkTransaction(@Path("id") String id);
 
+    @GET("/api/init/{id}")
+    Call<Initialization> initialize(@Path("id") String id);
+
 
 
 }

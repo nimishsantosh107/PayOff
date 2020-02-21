@@ -41,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        id = "2";
+
         gson = new GsonBuilder()
                 .setLenient()
                 .create();
@@ -118,6 +120,16 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        Button b6 = findViewById(R.id.b6);
+        b6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Initialize(id);
+            }
+        });
+
+
     }
 
     //Functions
@@ -211,6 +223,29 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<CheckTransaction> call, Throwable t) {
+                Log.e("REQ-FAIL", t.getMessage());
+            }
+        });
+    }
+
+    public void Initialize(String id){
+        Call<Initialization> req = service.initialize(id);
+        req.enqueue(new Callback<Initialization>() {
+            @Override
+            public void onResponse(Call<Initialization> call, Response<Initialization> response) {
+
+                if(response.body()==null)
+                {
+                    Toast.makeText(MainActivity.this, "Null", Toast.LENGTH_SHORT).show();
+                }else {
+                    Initialization res = response.body();
+                    Log.e("REQ-SUCCESS", String.valueOf(res.getAddress()));
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<Initialization> call, Throwable t) {
                 Log.e("REQ-FAIL", t.getMessage());
             }
         });
